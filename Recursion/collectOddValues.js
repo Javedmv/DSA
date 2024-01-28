@@ -13,4 +13,4 @@ function collectOddValues(arr){
     return result;
 }
 
-console.log(collectOddValues([2,2,3,4,6,5,4,3,2,1,3,5,6,7,8,9]));
+console.log(collectOddValues([2,2,3,4,6,5,4,3,2,1,3,5,6,7,8,8]));
