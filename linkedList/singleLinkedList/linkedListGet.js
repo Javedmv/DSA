@@ -1,7 +1,7 @@
 class Node{
     constructor(val){
         this.value = val;
-        this.next = null;
+        this.next = null; 
     }
 }
 
@@ -24,12 +24,12 @@ class SinglyLinkedList{
         return this;
     }
     pop(){
-        if(!this.head)return undefined
+        if(!this.head) return undefined;
         var current = this.head;
         var newTail = current
         while(current.next){
-            newTail = current;
-            current = current.next
+            newTail = current
+            current = newTail.next
         }
         this.tail = newTail;
         this.tail.next = null;
@@ -43,7 +43,7 @@ class SinglyLinkedList{
     shift(){
         if(!this.head)return undefined
         var oldHead = this.head;
-        this.head = oldHead.next;
+        this.head = this.head.next;
         this.length--;
         if(this.length === 0){
             this.tail = null;
@@ -54,17 +54,27 @@ class SinglyLinkedList{
         var newNode = new Node(val)
         if(!this.head){
             this.head = newNode;
-            this.tail = this.head;
+            this.tail = this.head
         }else{
             newNode.next = this.head;
             this.head = newNode;
         }
-        this.length++
+        this.length++;
         return this;
-    } 
+    }
+    get(index){
+        if(index < 0 || index >= this.length) return null;
+        var counter = 0;
+        var current = this.head;
+        while(counter !== index){
+            current = current.next;
+            counter++;
+        }
+        return current
+    }
 }
 
 var list = new SinglyLinkedList()
-console.log(list);
-list.unShift(9)
-console.log(list);
+list.push(9)
+list.push(7)
+console.log(list.get(2));
