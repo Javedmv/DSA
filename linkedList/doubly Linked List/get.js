@@ -68,12 +68,26 @@ class doublyLinkedList{
     }
     Get(index){
         if(index < 0 || index >= this.length)return null;
-        var count = 0;
-        var current = this.head;
-        while(count !== index){
-            count++;
-            current = current.next;
+        if(index <= this.length / 2){
+            var count = 0;
+            var current = this.head;
+            while(count !== index){
+                count++;
+                current = current.next;
+            }
+            return current
+        }else{
+            var count = this.length - 1;
+            var current = this.tail;
+            while(count !== index){
+                count--;
+                current = current.prev;
+            }
+            return current
+
         }
-        return current
+    }
+    set(index,val){
+        if(index < 0 || index > this.length) return undefined
     }
 }
