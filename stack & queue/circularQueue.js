@@ -6,7 +6,7 @@ class CircularQueue{
         this.currentLength = 0;
         this.capacity = capacity
     }
-    ifFull(){
+    isFull(){
         return this.currentLength == capacity;
     }
     isEmpty(){
@@ -16,10 +16,10 @@ class CircularQueue{
         return this.currentLength;
     }
     enqueue(item){
-        if(!isFull){
+        if(!this.isFull){
             this.rear = (this.rear +1) % this.capacity;
             this.items[this.rear] = item;
-            this.currLength++;
+            this.currentLength++;
             if(this.front == -1) this.front == this.rear;
         }else{
             console.log('queue is already full');
