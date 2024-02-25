@@ -73,4 +73,16 @@ class BST{
         traverse(this.root);
         return data;
     }
+
+    //inOrder
+    DFSInOrder(){
+        var data = [];
+        function traverse(node){
+            node.left && traverse(node.left);
+            data.push(node);
+            node.right && traverse(node.right);
+        }
+        traverse(this.root);
+        return data;
+    }
 }
