@@ -35,14 +35,14 @@ class BinarySearchTree{
             }
         }
     }
-    find(value){
-        if(!this.root)return false;
+    find(val){
+        if(!this.root)return undefined;
         var curr = this.root;
         var found = false;
-        if(curr && !found){
-            if(value < curr.value){
+        while(curr && !found){
+            if(val < curr.value){
                 curr = curr.left;
-            }else if(value > curr.value){
+            }else if(val > curr.value){
                 curr = curr.right;
             }else{
                 found = true;
