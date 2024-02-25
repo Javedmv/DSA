@@ -53,12 +53,24 @@ class BST{
     
     DFSPreOrder(){
         var data = [];
-        function treverse(node){
+        function traverse(node){
             data.push(node);
-            if(node.left)treverse(node.left);
-            if(node.right)treverse(node.right);
+            if(node.left)traverse(node.left);
+            if(node.right)traverse(node.right);
         }
-        treverse(this.root);
+        traverse(this.root);
         return data;
     };
+
+    //postOrder
+    DFSPostOrder(){
+        var data = [];
+        function traverse(node){
+            if(node.left)traverse(node.left);
+            if(node.right)traverse(node.right);
+            data.push(node)
+        }
+        traverse(this.root);
+        return data;
+    }
 }
