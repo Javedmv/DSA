@@ -32,21 +32,18 @@ class BST{
             }
         }
     }
-    find(val){
-        if(!this.root)return undefined;
-        var curr = this.root;
-        var found = false;
-        while(curr && !found){
-            if(val < curr.value){
-                curr = curr.left;
-            }else if(val > curr.value){
-                curr = curr.right;
+    search(root,val){
+        if(!root){
+            return false;
+        }else{
+            if(root.value === val){
+                return true;
+            }else if(val < root.value){
+                return this.search(root.left,val);
             }else{
-                found = true;
+                return this.search(root.right,val);
             }
         }
-        if(!found)return false;
-        return curr;
     }
 
     //preOrder
