@@ -47,6 +47,47 @@ class Graph{
             this.adjacencyList[vertex2].has(vertex1)
         )
     }
+
+    BFS(start){
+        const queue = [start];
+        const result = [];
+        const visited = {};
+
+        visited[start] = true;
+
+        while(queue.length){
+            const currentVertex = queue.shift();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            });
+        }
+
+        return result;
+    }
+    DFS(start){
+        const visited = {};
+        const result = [];
+
+        const dfs = (vertex) => {
+            if(!vertex) return null;
+            visited[vertex] = true;
+            result.push(vertex);
+            this.adjacencyList[vertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    return dfs(neighbor);
+                }
+            });
+        };
+
+        dfs(start);
+        return result;
+    }
+
 }
 const graph = new Graph();
 graph.addVertex("A");
@@ -55,5 +96,9 @@ graph.addVertex("C");
 
 graph.addEdge("A","B");
 graph.addEdge("B","C");
+
 graph.display();
 console.log(graph.hasEdge("A","C"));
+
+graph.removeVertex("B");
+graph.display();
