@@ -2,7 +2,7 @@ class Minheap{
     constructor(){
         this.heap = [];
     }
-    
+
     getParentIndex(index){
         return Math.floor((index-1)/2);
     }
@@ -71,3 +71,14 @@ class Minheap{
         return sortedArr
     }
 }
+const minHeap = new Minheap();
+
+// minHeap.buildHeapFromArray([3, 7, 2, 1, 9, 8]);
+
+console.log(minHeap.heap); // [1, 3, 2, 7, 9, 8]
+
+console.log(minHeap.remove()); // 1
+
+console.log(minHeap.heap); // [2, 3, 8, 7, 9]
+
+console.log(minHeap.heapSort()); // [2, 3, 7, 8, 9]
