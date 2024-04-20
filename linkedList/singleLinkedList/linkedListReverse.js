@@ -129,18 +129,20 @@ class SinglyLinkedList{
             current = current.next;
         }
         console.log(arr);
+        // return arr;
     }
 }
 
 var list = new SinglyLinkedList()
-list.push(9)
-list.push(4)
-list.push(8)
-list.push(7)
-list.push(8)
-list.print()
-list.reverse()
-list.print()
+list.push(9);
+list.push(4);
+list.push(8);
+list.push(7);
+list.push(8);
+list.print();
+list.reverse();
+list.print();
 // console.log(list);
 // console.log(list.remove(1));
 // console.log(list.print);
+zz

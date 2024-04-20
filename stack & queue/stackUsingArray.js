@@ -13,7 +13,7 @@ class stack{
     }
     peek(){
         if(!this.isEmpty()){
-            return this.item[0];
+            return this.item[this.item.length - 1];
         }
         return 'Stack is empty'
     }

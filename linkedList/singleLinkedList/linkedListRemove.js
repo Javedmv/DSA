@@ -102,7 +102,7 @@ class SinglyLinkedList{
         var previousNode = this.Get(index - 1);
         var removed = previousNode.next;
         previousNode.next = removed.next;
-        this.length++;
+        this.length--;
         return removed;
     }
 }
