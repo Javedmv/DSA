@@ -59,7 +59,7 @@ class BinarySearchTree{
         if(!root.right){
             return root.value;
         }else{
-            this.max(root.right);
+            return this.max(root.right);
         }
     }
 }

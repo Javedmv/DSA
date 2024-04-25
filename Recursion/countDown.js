@@ -8,4 +8,4 @@ function countDown(num){
     countDown(num);
 }
 
-console.log(countDown(2));
+countDown(2);
